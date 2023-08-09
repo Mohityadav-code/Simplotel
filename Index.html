@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Order Food</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            color: #000;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            padding-left: 40px;
+            align-items: center;
+            width: 100%;
+            max-width: 950px;
+        }
+
+        .menu-item {
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+
+        .FirstImageBgHere {
+            background-image: url('./img1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .SecondImageBgHere {
+            background-image: url('./img2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .ThirdImageBgHere {
+            background-image: url('./img3.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .FourthImageBgHere {
+            background-image: url('./img4.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: inline;
+            }
+
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0px;
+                width: 150px;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            }
+
+            .menu-item {
+                padding: 5px;
+                color: gray;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                border-bottom: gray solid 1px;
+                
+            }
+            .menu-item:hover{
+                background-color: #FF66C4;
+                color: #fff;
+            }
+
+            .menu-open {
+                display: flex;
+            }
+        }
+
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .justify-around {
+            justify-content: space-around;
+        }
+
+        .items-center {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .px-2 {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .header {
+            width: 94%;
+            display: flex;
+            justify-content: space-around;
+            font-family: serif;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .rounded-full {
+            border-radius: 9999px;
+        }
+
+        .w-6,
+        .h-6 {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .border-2 {
+            border-width: 2px;
+        }
+
+        .border-black {
+            border-color: black;
+        }
+
+        .p-1 {
+            padding: 0.25rem;
+        }
+
+        .w-full,
+        .h-full {
+            width: 100%;
+            height: 100%;
+        }
+
+        .bg-gradient-to-r {
+            background-image: linear-gradient(to right, var(--from-color), var(--to-color));
+        }
+
+        .bg-gray-400 {
+            background-color: #cbd5e0;
+        }
+
+        .bg-[75%] {
+            background-size: 75%;
+            background-position: center;
+        }
+
+        .text-[30px] {
+            font-size: 1.875rem;
+        }
+
+        .text-[38px] {
+            font-size: 2.375rem;
+        }
+
+        .text-[20px] {
+            font-size: 1.25rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+
+        .font-extralight {
+            font-weight: 200;
+        }
+
+        .hover:scale-105:hover {
+            transform: scale(1.05);
+        }
+
+        .hover:translate-y-0:hover {
+            transform: translateY(0);
+        }
+
+        .hover:translate-y-5:hover {
+            transform: translateY(-1.25rem);
+        }
+
+        .hover:shadow-lg:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+
+<body>
+    <div class=" flex px-2 w-full   justify-around h-14 items-center ">
+
+        <div class="header  w-[94%]  flex  lg:justify-around font-serif justify-start items-center ">
+            <div class="menu-icon  ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path d="M4 18h16v-2H4v2zM4 13h16v-2H4v2zM4 6v2h16V6H4z" />
+                </svg>
+            </div>
+            <div class="menu w-full" id="menu">
+                <div class="menu-item hover:scale-110 transition-all hover:text-[#FF66C4] ">Home</div>
+                <div class="menu-item hover:scale-110 transition-all hover:text-[#FF66C4]">Order</div>
+                <div class="menu-item hover:scale-110 transition-all hover:text-[#FF66C4]">Food</div>
+                <div class="menu-item hover:scale-110 transition-all hover:text-[#FF66C4]">Restaurant</div>
+                <div class="menu-item hover:scale-110 transition-all hover:text-[#FF66C4]">Testimonials</div>
+                <div class="menu-item hover:scale-110 transition-all hover:text-[#FF66C4]">ContactUs</div>
+            </div>
+        </div>
+        <div class=" w-[6%]   lg:flex hidden    justify-around ">
+
+            <a href="tel:(+919009484884)"
+                class=" rounded-full w-6 h-6 flex justify-center items-center border-2  border-black p-1  ">
+
+
+                <svg class=" w-full h-full " xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                </svg>
+            </a>
+            <div class=" w-6 h-6  flex justify-center items-center">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon cart-icon">
+                    <circle cx="9" cy="21" r="1" />
+                    <circle cx="20" cy="21" r="1" />
+                    <path d="M1 1h4l2.1 10.493a2 2 0 0 0 1.974 1.507h12a2 2 0 0 0 1.974-1.507L23 6H6" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class=" bg-gray-400 w-full h-full">
+
+        <div class=" w-screen  h-[50vh] lg:h-screen  bg-gradient-to-r from-[#FF66C4] to bg-[#FFDD5A]">
+            <div class="relative w-full  flex justify-center items-center h-5/6  FirstImageBgHere">
+                <div
+                    class="absolute  hover:scale-105 translate-y-0 lg:translate-y-5 hover:translate-y-4 transition-all  hover:shadow-lg hover:shadow-gray-500  w-full  md:w-2/3 lg:w-[35%] bg-[#cf7266be] hover:bg-[#cf7266] h-full  md:h-auto lg:h-auto py-3 left-0 lg:left-20 flex justify-center items-start  flex-col">
+                    <h1
+                        class="  text-[30px] pl-10  pr-10  md:pr-8 lg:pr-10  lg:text-[38px] uppercase font-bold text-white font-sans">
+                        Lorem Ipsum</h1>
+                    <p class="  text-[14px] pl-10  pr-10  md:pr-8 lg:pr-14 lg:text-[15px] text-white font-extralight">
+                        Lorem Ipsum has been the industry's standard
+                        dummy
+                        text ever since the 1500s, when an unknown printer took
+                        a galley of type and scrambled it to make a type
+                        specimen book. </p>
+                </div>
+            </div>
+        </div>
+        <div class=" w-screen h-auto mt-3 py-20  bg-gradient-to-r from-[#FF66C4] to bg-[#FFDD5A]">
+            <div class=" flex justify-around items-center  gap-10 w-full h-full flex-wrap ">
+                <div
+                    class=" bg-white w-[300px]  rounded-tr-[75px]  p-5 hover:scale-105 translate-y-5 hover:translate-y-0 transition-all  hover:shadow-lg hover:shadow-gray-500 h-[400px] rounded-bl-[75px]">
+                    <div class=" bg-gray-500 rounded-tr-[70px]  w-full h-[75%]  FourthImageBgHere"></div>
+                    <div>
+                        <h1 class=" text-[20px] font-bold text-center pt-4 pb-2 uppercase">Burger</h1>
+                        <p class=" text-[14px] text-center px-2">Lorem Ipsum has been the
+                            industry's standard dummy text.</p>
+                    </div>
+                </div>
+                <div
+                    class=" bg-white w-[300px]  rounded-tr-[75px]  p-5 hover:scale-105 translate-y-5 hover:translate-y-0 transition-all  hover:shadow-lg hover:shadow-gray-500 h-[400px] rounded-bl-[75px]">
+                    <div class=" bg-gray-500 rounded-tr-[70px]  w-full h-[75%]  SecondImageBgHere"></div>
+                    <div>
+                        <h1 class=" text-[20px] font-bold text-center pt-4 pb-2 uppercase">Pizza</h1>
+                        <p class=" text-[14px] text-center px-2">Lorem Ipsum has been the
+                            industry's standard dummy text.</p>
+                    </div>
+                </div>
+                <div
+                    class=" bg-white w-[300px]  rounded-tr-[75px]  p-5 hover:scale-105 translate-y-5 hover:translate-y-0 transition-all  hover:shadow-lg hover:shadow-gray-500 h-[400px] rounded-bl-[75px]">
+                    <div class=" bg-gray-500 rounded-tr-[70px]  w-full h-[75%]  ThirdImageBgHere"></div>
+                    <div>
+                        <h1 class=" text-[20px] font-bold text-center pt-4 pb-2 uppercase">Pasta</h1>
+                        <p class=" text-[14px] text-center px-2">Lorem Ipsum has been the
+                            industry's standard dummy text.</p>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class=" flex justify-center items-center mt-20 lg:mt-40 w-full h-full ">
+                <button>
+                    <a href="menu.php"
+                        class=" bg-[#FFC4BE] hover:bg-[#cf7266be] text-gray-800 transition-all font-bold py-3 px-10 rounded-full">
+                        Order
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuIcon = document.querySelector('.menu-icon');
+        const menu = document.getElementById('menu');
+
+        menuIcon.addEventListener('click', () => {
+            menu.classList.toggle('menu-open');
+        });
+    </script>
+</body>
+
+</html>
